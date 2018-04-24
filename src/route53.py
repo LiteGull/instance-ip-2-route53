@@ -4,9 +4,9 @@ from src.Ec2Instance import Ec2Instance
 
 
 class HostedZone:
-    def __init__(self):
+    def __init__(self, hosted_zone_name=None):
         self.instance = Ec2Instance().ec2_instance()
-        self.hosted_zone_name = 'ADD_DOMAIN_HERE'
+        self.hosted_zone_name = hosted_zone_name
 
     def all_hosted_zones(self):
         r53 = boto3.client('route53')
