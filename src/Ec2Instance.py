@@ -2,8 +2,8 @@ import boto3
 
 
 class Ec2Instance(object):
-    def __init__(self):
-        self.instance_name = 'ADD_INSTANCE_NAME_HERE'
+    def __init__(self, instance_name=None):
+        self.instance_name = instance_name
 
     def get_instances(self):
         ec2 = boto3.client('ec2')
